@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}Home{% endblock %}
+{% block content %}
+    <h1>Inventory Management System</h1>
+    <div class="row">
+        {% for domain in domains %}
+        <div class="col-6 col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ domain.name }}</h5>
+                    <p class="card-text">{{ domain.description }}</p>
+                    <a href="/products/{{ domain.name }}" class="btn btn-primary">View Products</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

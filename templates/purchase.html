@@ -1,0 +1,32 @@
+<!-- purchase.html -->
+
+{% extends 'base.html' %}
+{% block content %}
+    <div class="container">
+        <h1 class="mt-4">Purchase Product</h1>
+        <form method="POST" action="/purchase/{{ product_id }}">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+            <div class="mb-3">
+                <label for="rollno" class="form-label">Roll No</label>
+                <input type="text" class="form-control" id="rollno" name="rollno" required>
+            </div>
+            <div class="mb-3">
+                <label for="contact_no" class="form-label">Contact No</label>
+                <input type="text" class="form-control" id="contact_no" name="contact_no" required>
+            </div>
+            <div class="mb-3">
+                <label for="purchased_date" class="form-label">Purchased Date</label>
+                <input type="date" class="form-control" id="purchased_date" name="purchased_date" required>
+            </div>
+            <div class="mb-3">
+                <label for="return_date" class="form-label">Return Date</label>
+                <input type="date" class="form-control" id="return_date" name="return_date">
+            </div>
+            <input type="hidden" name="domain_name" value="{{ domain_name }}">
+            <button type="submit" class="btn btn-primary">Purchase</button>
+        </form>
+    </div>
+{% endblock %}

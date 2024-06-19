@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Purchase History</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/">Inventory Management</a>
+    </nav>
+    <div class="container mt-5">
+        <h2>Purchase History</h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Domain Name</th>
+                    <th>Username</th>
+                    <th>Roll No</th>
+                    <th>Purchased Date</th>
+                    <th>Return Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for record in history %}
+                <tr>
+                    <td>{{ record.product_name }}</td>
+                    <td>{{ record.domain_name }}</td>
+                    <td>{{ record.username }}</td>
+                    <td>{{ record.rollno }}</td>
+                    <td>{{ record.purchased_date }}</td>
+                    <td>{{ record.return_date }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
